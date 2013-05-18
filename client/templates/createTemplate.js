@@ -1,7 +1,17 @@
 Template.createTemplate.events({
 	'click #btnCreate': function() {
 		console.log('Create Template Clicked');
-		TemplateGroup.insert({name: taProperties.value});
-		console.log('Item inserted');
+		
+		var newTemplate = {};
+		newTemplate.name = txtTemplateName.value;
+		var properties = taProperties.value.split('\n');
+		
+		newTemplate.properties = [];
+		for (var i = 0; i < properties.length; i++) {
+			newTemplate.properties.push(properties[i]);
+		}
+		
+		TemplateGroup.insert(newTemplate);
+		console.log('Item Inserted');
 	}
 });

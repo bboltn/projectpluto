@@ -1,6 +1,4 @@
-
-
 Meteor.startup(function () {
-	TemplateGroup.remove({});
+	//TemplateGroup.remove({});
     // code to run on server at startup
 });

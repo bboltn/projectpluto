@@ -1,0 +1,24 @@
+<head>
+  <title>Create Inventory Group</title>
+</head>
+
+<body>
+  {{> createInventoryGroup}}
+</body>
+
+<template name="createInventoryGroup">
+	<h1>Create Inventory Group</h1>
+	
+	<label for="txtInventoryName">Name:</label>
+	<input type="text" id="txtInventoryName" />
+	<br />
+	<select id="ddTemplates">
+		<option id="template_0" value="">Choose Template...</option>
+		{{#each templates}}
+		<option id="template_{{_id}}" value="{{_id}}">{{name}}</option>
+		{{/each}}
+	</select>
+	<br />
+	<input type="button" id="btnNext" value="Next" />
+	<input type="button" id="btnCancel" value="Cancel" />
+</template>
