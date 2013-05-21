@@ -11,7 +11,8 @@ Template.createTemplate.events({
 			newTemplate.properties.push(properties[i]);
 		}
 		
-		TemplateGroup.insert(newTemplate);
+		//TemplateGroup.insert(newTemplate);//doesn't work anymore???
+		TemplateGroup._collection.insert(newTemplate);
 		console.log('Item Inserted');
 	}
 });
