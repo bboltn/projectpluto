@@ -1,1 +1,0 @@
-InventoryGroup = new Meteor.Collection("InventoryGroup");
