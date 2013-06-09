@@ -1,6 +1,5 @@
 itemTemplateCol = new Meteor.Collection("itemTemplateCol");
 
-//grade, info, tracking
 Meteor.methods({
 	createItemTemplate: function(itemTemplateAttributes){
 		
