@@ -1,0 +1,19 @@
+<template name="header">
+	<header class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="/">Hydra</a>
+			<ul class="nav">
+				<li> 
+					<a href="{{createTemplatePath}}">Create Template</a>
+				</li>
+				<li>
+					<a href="{{createInventoryGroupPath}}">Create Inventory Group</a>
+				</li>
+			</ul>
+			<ul class="nav pull-right">
+				<li>{{loginButtons}}</li>
+			</ul>
+		</div>
+	</header>
+</template>
+

@@ -1,4 +1,4 @@
 TODO
 ----
-#add accounts and accounts ui package
-#restrict item template creation
+- create error handling thing
+- restrict item template creation
