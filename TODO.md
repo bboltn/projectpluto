@@ -1,4 +1,4 @@
 TODO
 ----
-- create error handling thing
 - restrict item template creation
+- create scaffolding for other business functions

@@ -1,5 +1,8 @@
 Template.viewItemTemplate.helpers({
-	currentItemTemplate: function(){
-		return itemTemplateCol.findOne(Session.get("currentItemTemplateId"));
+	currentItemTemplate: function(id){
+		if(!id)
+			var id = Session.get("currentItemTemplateId");
+
+		return itemTemplateCol.findOne(id);
 	}
 });

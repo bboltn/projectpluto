@@ -14,7 +14,7 @@ Meteor.methods({
 		
 		console.log(newTemplate);
 		templateId = itemTemplateCol.insert(newTemplate);
-		
+
 		return templateId;
 	}
 });

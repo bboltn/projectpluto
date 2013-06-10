@@ -1,7 +1,12 @@
 <template name="viewItemTemplate">
-hey
-{{#with currentItemTemplate}}
-<h1>view template {{name}} </h1>
-{{/with}}
-dude
+	{{#with currentItemTemplate this._id}}
+	<div class="post">
+	<h3>{{name}}</h3>
+	<ul>
+		{{#each properties}}	
+		<li>{{this}}</li>
+		{{/each}}
+	</ul>
+	{{/with}}
+	</div>
 </template>

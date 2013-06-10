@@ -2,14 +2,19 @@
 	<header class="navbar">
 		<div class="navbar-inner">
 			<a class="brand" href="/">Hydra</a>
+			{{#if currentUser}}
 			<ul class="nav">
-				<li> 
+				<li class="{{activeRouteClass 'createTemplate'}}"> 
 					<a href="{{createTemplatePath}}">Create Template</a>
 				</li>
-				<li>
+				<li class="{{activeRouteClass 'createInventoryGroup'}}">
 					<a href="{{createInventoryGroupPath}}">Create Inventory Group</a>
 				</li>
+				<li class="{{activeRouteClass 'viewItemTemplateAll'}}">
+					<a href="{{viewItemTemplateAllPath}}">View All Item Templates</a>
+				</li>
 			</ul>
+			{{/if}}
 			<ul class="nav pull-right">
 				<li>{{loginButtons}}</li>
 			</ul>
