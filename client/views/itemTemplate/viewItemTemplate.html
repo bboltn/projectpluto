@@ -1,12 +1,13 @@
 <template name="viewItemTemplate">
 	{{#with currentItemTemplate this._id}}
 	<div class="post">
-	<h3>{{name}}</h3>
-	<ul>
-		{{#each properties}}	
-		<li>{{this}}</li>
-		{{/each}}
-	</ul>
-	{{/with}}
+		<h3>{{name}}</h3>
+		<ul>
+			{{#each properties}}	
+			<li>{{this}}</li>
+			{{/each}}
+		</ul>
+		{{/with}}
+		<a class="btn btn-danger delete" id="{{_id}}" href="#">Delete item template</a>
 	</div>
 </template>
