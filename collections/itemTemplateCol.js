@@ -2,20 +2,21 @@ itemTemplateCol = new Meteor.Collection("itemTemplateCol");
 
 Meteor.methods({
 	createItemTemplate: function(itemTemplateAttributes){
-		
-		var newTemplate = { name: itemTemplateAttributes.name };
 
-		var properties = itemTemplateAttributes.properties;
-		
-		newTemplate.properties = [];
-		for (var i = 0; i < properties.length; i++) {
-			newTemplate.properties.push(properties[i]);
-		}
-		
-		console.log(newTemplate);
-		templateId = itemTemplateCol.insert(newTemplate);
+		if(!Meteor.user())
+			throw new Meteor.Error(401, "Please sign in to create a template");
 
-		return templateId;
+		if(!itemTemplateAttributes.name)
+			throw new Meteor.Error(422, "Please provide a name.");
+
+		var properties = _.filter(itemTemplateAttributes.properties, function(prop){ return prop !== ""; });
+		if(properties == 0)
+			throw new Meteor.Error(422, "Please provide properties.");
+
+		return itemTemplateCol.insert({
+			name: itemTemplateAttributes.name,
+			properties: properties
+		});
 	}
 });
 
