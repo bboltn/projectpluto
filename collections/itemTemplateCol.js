@@ -14,10 +14,19 @@ Meteor.methods({
 		if(properties == 0)
 			throw new Meteor.Error(422, "Please provide properties.");
 
-		return itemTemplateCol.insert({
-			name: itemTemplateAttributes.name,
-			properties: properties
-		});
+		if(itemTemplateAttributes._id)
+			return itemTemplateCol.update({
+				_id: itemTemplateAttributes._id
+			},
+			{
+				name: itemTemplateAttributes.name,
+				properties: properties
+			});
+		else
+			return itemTemplateCol.insert({
+				name: itemTemplateAttributes.name,
+				properties: properties
+			});
 	},
 	deleteItemTemplate: function(id){
 		if(!Meteor.user())

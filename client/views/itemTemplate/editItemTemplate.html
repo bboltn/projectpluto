@@ -1,0 +1,31 @@
+<template name="editItemTemplate">
+	{{#with currentItemTemplate this._id}}
+		<form class="main">
+			<input name="_id" type="hidden" value="{{_id}}"/>
+			<div class="control-group">
+				<label class="control-label" for="txtName">Name</label>
+				<div class="controls">
+					<input name="txtName" type="text" value="{{name}}" 
+					placeholder="your item template name"/>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="taProperties">Properties</label>
+				<div class="controls">
+					<textarea name="taProperties" 
+					rows="10" cols="50">{{formatProperties properties}}</textarea>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<input type="submit" value="Submit" 
+					class="btn btn-primary submit"/>
+				</div>
+			</div>
+				
+		</form>
+	{{/with}}
+</template>
+

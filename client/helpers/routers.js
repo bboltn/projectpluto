@@ -4,8 +4,14 @@ Meteor.Router.add({
   "/inventorygroup/create": "createInventoryGroup",
   "/template/view/": "viewItemTemplateAll",
   "/template/view/:_id": {
-	  to: "viewItemTemplate",
-	  and: function(id){ Session.set("currentItemTemplateId", id); }
+	to: "viewItemTemplate",
+	and: function(id){ Session.set("currentItemTemplateId", id); }
+  },
+  "/template/edit/:_id": {
+	to: "editItemTemplate",
+	and: function(id){
+		Session.set("currentItemTemplateId", id);
+	}
   },
   "/inventorygroup/view/": "viewInventoryGroupAll",
   "/inventorygroup/view/:_id": {

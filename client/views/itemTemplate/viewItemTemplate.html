@@ -1,13 +1,24 @@
 <template name="viewItemTemplate">
-	{{#with currentItemTemplate this._id}}
-	<div class="post">
-		<h3>{{name}}</h3>
-		<ul>
-			{{#each properties}}	
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
-		{{/with}}
-		<a class="btn btn-danger delete" id="{{_id}}" href="#">Delete item template</a>
-	</div>
+{{#with currentItemTemplate this._id}}
+	<form class="main">
+
+		<div class="control-group">
+			<h3>{{name}}</h3>
+			<ul>
+				{{#each properties}}	
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<a class="btn edit" href="{{editItemTemplatePath _id}}">Edit</a>
+				<a class="btn btn-danger delete" href="#" data-id="{{_id}}">Delete</a>
+			</div>
+		</div>
+
+	</form>
+{{/with}}
+
 </template>

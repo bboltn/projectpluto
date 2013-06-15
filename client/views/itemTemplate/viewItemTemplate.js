@@ -12,9 +12,10 @@ Template.viewItemTemplate.events({
 		e.preventDefault();
 
 		if (confirm("Delete this item template group?")) {
-			Meteor.call("deleteItemTemplate", {_id: e.currentTarget.id},function(){ 
+			Meteor.call("deleteItemTemplate", {_id: e.currentTarget.dataset.id},function(){ 
 				Meteor.Router.to("viewItemTemplateAll");
 			});
 		}
 	}
 });
+
