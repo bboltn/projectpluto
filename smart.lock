@@ -1,9 +1,5 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master",
-    "commit": "9bb2b5447e845c4f483df5e9b42a2c1de5ab909b"
-  },
+  "meteor": {},
   "dependencies": {
     "basePackages": {
       "router": {},
@@ -29,8 +25,8 @@
       },
       "npm": {
         "git": "https://github.com/arunoda/meteor-npm.git",
-        "tag": "v0.1.1",
-        "commit": "27a8d1cc8f900ebd4d239dbc8bd43a606c3090e6"
+        "tag": "v0.1.4",
+        "commit": "68ab2b952ab21a5bbba879b37be9385ec8ff6d63"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
