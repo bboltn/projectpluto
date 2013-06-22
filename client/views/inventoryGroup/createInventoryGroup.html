@@ -1,18 +1,29 @@
 <template name="createInventoryGroup">
-	<div class="post">
+<form class="main">
 	<h1>Create Inventory Group</h1>
-	
-	<label for="txtInventoryName">Name:</label>
-	<input type="text" id="txtInventoryName" />
-	<br />
-	<select id="ddTemplates">
-		<option id="template_0" value="">Choose Template...</option>
-		{{#each dropdown}}
-		<option id="template_{{_id}}" value="{{_id}}">{{name}}</option>
-		{{/each}}
-	</select>
-	<br />
-	<input type="button" id="btnNext" value="Next" />
-	<input type="button" id="btnCancel" value="Cancel" />
+	<div class="control-group">
+		<label class="control-label" for="txtInventoryName"></label>
+		<div class="controls">
+			<input name="txtInventoryName" type="text" placeholder="inventory name">
+			</input>
+		</div>
 	</div>
+	<div class="control-group">
+		<label class="control-label" for="ddTemplates"></label>
+		<div class="controls">
+			<select name="ddTemplates">
+				<option id="template_0" value="">Choose Template...</option>
+				{{#each dropdown}}
+				<option id="template_{{_id}}" value="{{_id}}">{{name}}</option>
+				{{/each}}
+			</select>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<input class="btn" type="button" id="btnCancel" value="Cancel" />
+			<input class="btn btn-primary submit" type="submit" id="btnNext" value="Next &gt;" />
+		</div>
+	</div>
+</form>
 </template>

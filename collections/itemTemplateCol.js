@@ -17,8 +17,7 @@ Meteor.methods({
 		if(itemTemplateAttributes._id)
 			return itemTemplateCol.update({
 				_id: itemTemplateAttributes._id
-			},
-			{
+			},{
 				name: itemTemplateAttributes.name,
 				properties: properties
 			});
