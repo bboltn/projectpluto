@@ -1,0 +1,21 @@
+<template name="viewInventoryGroup">
+{{#with currentInventoryGroup this._id}}
+	<form class="main">
+
+		<div class="control-group">
+			<h3>{{name}}</h3>
+			<p>default template id: {{defaultTemplateId}}</p>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<a class="btn edit" href="{{editInventoryGroup _id}}">Edit</a>
+				<a class="btn btn-danger delete" href="#" data-id="{{_id}}">Delete</a>
+			</div>
+		</div>
+
+	</form>
+{{/with}}
+
+</template>
+

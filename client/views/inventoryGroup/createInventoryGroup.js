@@ -19,7 +19,7 @@ Template.createInventoryGroup.events({
 						if(error)
 							Meteor.Errors.throw(error.reason);
 						else
-							Meteor.Router.to("home");
+							Meteor.Router.to("viewInventoryGroup",id);
 					}
 				   );
 			}
