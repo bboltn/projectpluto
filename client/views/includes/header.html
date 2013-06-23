@@ -1,17 +1,38 @@
 <template name="header">
 	<header class="navbar">
 		<div class="navbar-inner">
-			<a class="brand" href="/">Hydra</a>
+			<a class="brand" href="/">Band Buddy</a>
 			{{#if currentUser}}
 			<ul class="nav">
-				<li class="{{activeRouteClass 'createTemplate'}}"> 
-					<a href="{{createTemplatePath}}">Create Template</a>
+				<li class="dropdown {{activeRouteClass 'createTemplate' 
+				'viewItemTemplateAll'}}">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Templates &#x25BC;</a>
+					<ul class="dropdown-menu" role="menu">
+						<li> 
+							<a href="{{createTemplatePath}}">Create</a>
+						</li>
+						<li class="{{activeRouteClass }}">
+							<a href="{{viewItemTemplateAllPath}}">
+								View All
+							</a>
+						</li>
+					</ul>
 				</li>
-				<li class="{{activeRouteClass 'createInventoryGroup'}}">
-					<a href="{{createInventoryGroupPath}}">Create Inventory Group</a>
-				</li>
-				<li class="{{activeRouteClass 'viewItemTemplateAll'}}">
-					<a href="{{viewItemTemplateAllPath}}">View All Item Templates</a>
+				<li class="dropdown {{activeRouteClass 'createInventoryGroup' 
+				'viewInventoryGroupAll'}}">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Inventory Group &#x25BC;</a>
+					<ul class="dropdown-menu" role="menu">
+						<li> 
+							<a href="{{createInventoryGroupPath}}">Create</a>
+						</li>
+						<li class="{{activeRouteClass }}">
+							<a href="{{viewInventoryGroupAllPath}}">
+								View All
+							</a>
+						</li>
+					</ul>
 				</li>
 			</ul>
 			{{/if}}
