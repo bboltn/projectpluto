@@ -1,0 +1,38 @@
+<template name="editInventoryGroup">
+	{{#with currentInventoryGroup this._id}}
+		<form class="main">
+			<input name="_id" type="hidden" value="{{_id}}"/>
+			<div class="control-group">
+				<label class="control-label" for="txtName">Name</label>
+				<div class="controls">
+					<input name="txtName" type="text" value="{{name}}" 
+					placeholder="your inventory group name"/>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="ddItemTemplateGroup">Item Template
+				</label>
+				<div class="controls">
+					<select name="ddItemTemplateGroup">
+						{{#each itemTemplateIds defaultTemplateId}}
+						<option {{#if selected}}selected{{/if}} 
+						id="template_{{_id}}" value="{{_id}}">{{name}}
+						</option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<input type="submit" value="Submit" 
+					class="btn btn-primary submit"/>
+				</div>
+			</div>
+				
+		</form>
+	{{/with}}
+</template>
+
+

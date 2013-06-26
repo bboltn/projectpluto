@@ -10,17 +10,17 @@ Meteor.methods({
 		if(!inventoryGroupAttributes.name)
 			throw new Meteor.Error(422, "Please provide a name");
 
-		if(!inventoryGroupAttributes.templateId)
+		if(!inventoryGroupAttributes.defaultTemplateId)
 			throw new Meteor.Error(422, "Please select an inventory template");
 
 		if(inventoryGroupAttributes._id)
 		{
 			//this is an update
-			return inventory.update({
+			return inventoryGroupCol.update({
 				_id: inventoryGroupAttributes._id
 			},{
 				name: inventoryGroupAttributes.name,
-				defaultTemplateId: inventoryGroupAttributes.templateId
+				defaultTemplateId: inventoryGroupAttributes.defaultTemplateId
 			});
 		}
 		else
@@ -28,7 +28,7 @@ Meteor.methods({
 			//this is an insert
 			return inventoryGroupCol.insert({
 				name: inventoryGroupAttributes.name,
-				defaultTemplateId: inventoryGroupAttributes.templateId});
+				defaultTemplateId: inventoryGroupAttributes.defaultTemplateId});
 		}
 	}
 });
