@@ -1,0 +1,18 @@
+<template name="viewTrackedItem">
+{{#with currentTrackedItem this._id}}
+	<form class="main">
+		{{#each itemValues}}
+		<div class="control-group">
+			<p>{{this}}</p>	
+		</div>
+		{{/each}}
+		<div class="control-group">
+			<div class="controls">
+				<a class="btn edit" href="{{editTrackedItemPath _id}}">Edit</a>
+				<a class="btn btn-danger delete" href="#" data-id="{{_id}}">Delete</a>
+			</div>
+		</div>
+
+	</form>
+{{/with}}
+</template>

@@ -21,6 +21,20 @@ Meteor.Router.add({
   "/inventorygroup/edit/:_id": {
 	to: "editInventoryGroup",
 	and: function(id){ Session.set("currentInventoryGroupId", id); }
+  },
+  "/item/create": "createTrackedItem",
+  "/item/view/":"viewTrackedItemAll",
+  "/item/view/:_id":{
+	to: "viewTrackedItem",
+	and: function(id){
+		Session.set("currentItemTrackedId", id);
+	}
+  },
+  "/item/edit/:_id":{
+	to: "editTrackedItem",
+	and: function(id){
+		Session.set("currentItemTrackedId", id);
+	}
   }
 });
 

@@ -30,6 +30,15 @@ Meteor.methods({
 				name: inventoryGroupAttributes.name,
 				defaultTemplateId: inventoryGroupAttributes.defaultTemplateId});
 		}
+	},
+	deleteInventoryGroup: function(_id){
+		if(!Meteor.user())
+			throw new Meteor.Error(401, "Please sign in to create a template");
+
+		if(!_id)
+			throw new Meteor.Error(422, "Please provide an id");
+
+		inventoryGroupCol.remove(_id);
 	}
 });
 

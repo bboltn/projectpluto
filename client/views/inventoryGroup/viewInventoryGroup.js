@@ -6,3 +6,16 @@ Template.viewInventoryGroup.helpers({
 	}
 });
 
+Template.viewInventoryGroup.events({
+	"click .delete": function(e) {
+		e.preventDefault();
+
+		if (confirm("Delete this inventory group?")) {
+			Meteor.call("deleteInventoryGroup", {
+				_id: e.currentTarget.dataset.id},function(){ 
+					Meteor.Router.to("viewInventoryGroupTemplateAll");
+			});
+		}
+	}
+});
+

@@ -34,6 +34,21 @@
 						</li>
 					</ul>
 				</li>
+				<li class="dropdown {{activeRouteClass 'createTrackedItem' 
+				'viewTrackedItemAll'}}">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Tracked Items &#x25BC;</a>
+					<ul class="dropdown-menu" role="menu">
+						<li> 
+							<a href="{{createTrackedItemPath}}">Create</a>
+						</li>
+						<li class="{{activeRouteClass }}">
+							<a href="{{viewTrackedItemAllPath}}">
+								View All
+							</a>
+						</li>
+					</ul>
+				</li>
 			</ul>
 			{{/if}}
 			<ul class="nav pull-right">
