@@ -9,3 +9,10 @@ Handlebars.registerHelper("debug", function(optionalValue) {
 		console.log(optionalValue);
 	}
 });
+
+Handlebars.registerHelper("eachProperty", function(context, options) {
+	var ret = "";
+	for(var prop in context)
+		ret += options.fn({property:prop,value:context[prop]});
+    return ret;
+});

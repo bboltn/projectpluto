@@ -1,6 +1,6 @@
 Template.viewTrackedItem.helpers({
 	currentTrackedItem: function(_id){
-		if(_id)
+		if(!_id)
 			var _id = Session.get("currentTrackedItemId");
 		return trackedItemCol.findOne({_id:_id});
 	}
