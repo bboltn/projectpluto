@@ -48,7 +48,7 @@ if(itemTemplateCol.find().count() == 0) {
 
 	var fluteItemId = trackedItemCol.insert({
 		itemValues: {
-			"Name":  "Flute1",
+			"Name": "Flute1",
 			"Serial": "123456ABC",
 			"Brand": "Boston",
 			"Notes": "the flute sounds like a bird",

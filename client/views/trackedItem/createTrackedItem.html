@@ -1,0 +1,30 @@
+<template name="createTrackedItem">
+{{#with currentGroupInfo}}
+	<form class="main">
+		<input type="hidden" value="{{_id}}"/>
+		<input type="hidden" value="{{baseItemTemplateId}}"/>
+		<input type="hidden" value="{{parentInventoryGroup}}"/>
+
+		<div class="control-group">
+			<table class="table">
+			{{#eachProperty itemValues}}
+				<tr>
+					<td><strong>{{property}}:</strong></td>
+					<td>
+						<input type="text" value="{{value}}" 
+						data-id="{{property}}"/> 
+					</td>
+				</tr>
+			{{/eachProperty}}
+			</table>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<input class="btn" type="button" id="btnCancel" value="Cancel" />
+				<input class="btn btn-primary submit" type="submit"
+					id="btnSubmit" value="Save" />
+			</div>
+		</div>
+	</form>
+{{/with}}
+</template>
