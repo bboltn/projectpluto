@@ -14,6 +14,10 @@ Meteor.Router.add({
 	}
   },
   "/inventorygroup/view/": "viewInventoryGroupAll",
+  "/inventorygroup/view/items/:_id": {
+	  to: "viewInventoryGroupItems",
+	  and: function(id){ Session.set("currentInventoryGroupId", id)}
+  },
   "/inventorygroup/view/:_id": {
 	  to: "viewInventoryGroup",
 	  and: function(id){ Session.set("currentInventoryGroupId", id); }

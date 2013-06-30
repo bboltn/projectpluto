@@ -68,4 +68,28 @@ if(itemTemplateCol.find().count() == 0) {
 			"Unassociated": false
 		}
 	});
+	
+	var fluteItemId2 = trackedItemCol.insert({
+		itemValues: {
+			"Name": "Flute2",
+			"Serial": "0987654321",
+			"Brand": "Branded",
+			"Notes": "the flute sounds like a horse",
+			"Condition": "meh",
+			"Owner": "MCSD",
+			"Grade Level": "junior"
+		},
+		baseItemTemplateId: musicId,
+		parentInventoryGroup: fluteId,
+		trackingFields: {
+			"Check In": true,
+			"Condition Returned": "average",
+			"Check Out": false,
+			"Condition Given": "perfect",
+			"Lost": false,
+			"Archive": false,
+			"Unassociated": false
+		}
+	});
+
 }
