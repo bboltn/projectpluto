@@ -11,7 +11,7 @@ Template.createInventoryGroup.events({
 
 		var inventoryGroupProperties = {
 			name: $(e.target).find("[name=txtInventoryName]").val(),
-			templateId: $(e.target).find("[name=ddTemplates]").val()
+			defaultTemplateId: $(e.target).find("[name=ddTemplates]").val()
 		}
 
 		Meteor.call("createInventoryGroup", inventoryGroupProperties, 

@@ -22,6 +22,12 @@ Meteor.Router.add({
 	to: "editInventoryGroup",
 	and: function(id){ Session.set("currentInventoryGroupId", id); }
   },
+  "/item/view/:_id":{
+	to: "viewTrackedItem",
+	and: function(id){
+		Session.set("currentTrackedItemId", id);
+	}
+  },
   "/item/:action/:_id": {
 	  to: "createTrackedItem",
 	  and: function(action, _id){
@@ -29,13 +35,7 @@ Meteor.Router.add({
 		  Session.set("currentLookupId", _id);
 		}
   },
-  "/item/view/":"viewTrackedItemAll",
-  "/item/view/:_id":{
-	to: "viewTrackedItem",
-	and: function(id){
-		Session.set("currentItemTrackedId", id);
-	}
-  }
+  "/item/view/":"viewTrackedItemAll"  
 });
 
 Meteor.Router.filters({
