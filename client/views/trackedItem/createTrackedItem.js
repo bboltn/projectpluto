@@ -37,14 +37,33 @@ Template.createTrackedItem.helpers({
 Template.createTrackedItem.events({
 	"submit form": function(e){
 		e.preventDefault();
-		//TODO:
-		//create this
-		//	{ _id (if present),itemValues{},baseItemTemplateId,
-		//	parentInventoryGroup (id), tracking fields }
-		//add fields to createTemplate to include names for base, parent, id
 
+		var trackedItem = {
+			baseItemTemplateId: $(e.target).find("[name=baseItemTemplateId]").val(),
+			parentInventoryGroup: 
+				$(e.target).find("[name=parentInventoryGroup]").val()
+		};
+		
+		var _id = $(e.target).find("[name=_id]").val();
+		if(_id)
+			_.extend(trackedItem, {_id: _id});
 
+		var itemValues = {};
+
+		var itemValuesForm = $("table.table").find("[data-id]");
+		for(var i = 0; i < itemValuesForm.length; i++) {
+			var fv = itemValuesForm[i];
+			var valuePair = {};
+			valuePair[fv.attributes["data-id"].value] = fv.value;
+			_.extend(itemValues, valuePair);
+		}
+		_.extend(trackedItem, {itemValues: itemValues});
+
+		Meteor.call("createTrackedItem", trackedItem, function(error, _id) {
+			if(error)
+				Meteor.Errors.throw(error.message);
+			else
+				Meteor.Router.to("viewTrackedItem", _id);
+		});
 	}
-	
-
 });

@@ -1,31 +1,18 @@
 trackedItemCol = new Meteor.Collection("trackedItemCol");
 
 Meteor.methods({
-	createTrackedItem: function(trackedItemAttributes){
+	createTrackedItem: function(trackedItem){
 
 		if(!Meteor.user())
 			throw new Meteor.Error(401, "Please sign in to create an item");
 
-		if(!trackedItemAttributes.itemValues)
+		if(trackedItem.itemValues === {})
 			throw new Meteor.Error(422, "Please provide at least one value.");
 
-		var properties = _.filter(itemTemplateAttributes.properties,
-								  function(prop){ return prop !== ""; });
-		if(properties == 0)
-			throw new Meteor.Error(422, "Please provide properties.");
-
-		if(itemTemplateAttributes._id)
-			return itemTemplateCol.update({
-				_id: itemTemplateAttributes._id
-			},{
-				name: itemTemplateAttributes.name,
-				properties: properties
-			});
+		if(trackedItem._id)
+			return trackedItemCol.update({_id: trackedItem._id}, trackedItem);
 		else
-			return itemTemplateCol.insert({
-				name: itemTemplateAttributes.name,
-				properties: properties
-			});
+			return trackedItemCol.insert(trackedItem);
 	},
 	deleteTrackedItem: function(id){
 		if(!Meteor.user())

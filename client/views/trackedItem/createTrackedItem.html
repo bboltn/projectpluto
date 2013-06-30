@@ -1,9 +1,11 @@
 <template name="createTrackedItem">
 {{#with currentGroupInfo}}
 	<form class="main">
-		<input type="hidden" value="{{_id}}"/>
-		<input type="hidden" value="{{baseItemTemplateId}}"/>
-		<input type="hidden" value="{{parentInventoryGroup}}"/>
+		<input type="hidden" value="{{_id}}" name="_id"/>
+		<input type="hidden" value="{{baseItemTemplateId}}" 
+			name="baseItemTemplateId"/>
+		<input type="hidden" value="{{parentInventoryGroup}}"
+			name="parentInventoryGroup"/>
 
 		<div class="control-group">
 			<table class="table">
@@ -12,7 +14,7 @@
 					<td><strong>{{property}}:</strong></td>
 					<td>
 						<input type="text" value="{{value}}" 
-						data-id="{{property}}"/> 
+							data-id="{{property}}"/> 
 					</td>
 				</tr>
 			{{/eachProperty}}
