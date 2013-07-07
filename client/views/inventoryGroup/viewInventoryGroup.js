@@ -2,7 +2,14 @@ Template.viewInventoryGroup.helpers({
 	currentInventoryGroup: function(_id){
 		if(!_id)
 			var _id = Session.get("currentInventoryGroupId");
-		return inventoryGroupCol.findOne({_id:_id});
+
+		var inventoryGroupItem = inventoryGroupCol.findOne({_id:_id});
+		var itemTemplateName = 
+			itemTemplateCol.findOne(
+				{_id: inventoryGroupItem.defaultTemplateId}).name;
+		inventoryGroupItem.itemTemplateName = itemTemplateName;
+		return inventoryGroupItem;
+
 	}
 });
 

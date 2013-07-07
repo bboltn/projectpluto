@@ -15,10 +15,6 @@ if(Meteor.users.find().count() === 0) {
 
 if(itemTemplateCol.find().count() == 0) {
 
-	var trackingFields = ["Check In", "Condition Returned",
-						"Check Out","Condition Given",
-						"Lost","Archive","Unassociated"];
-
 	var musicId = itemTemplateCol.insert({
 				name: "Music Instruments",
 				properties: ["Name","Serial","Brand","Notes","Condition","Owner",

@@ -1,5 +1,9 @@
 trackedItemCol = new Meteor.Collection("trackedItemCol");
 
+trackingFields = ["Check In", "Condition Returned",
+						"Check Out","Condition Given",
+						"Lost","Archive","Unassociated"];
+						
 Meteor.methods({
 	createTrackedItem: function(trackedItem){
 
@@ -16,7 +20,7 @@ Meteor.methods({
 	},
 	deleteTrackedItem: function(id){
 		if(!Meteor.user())
-			throw new Meteor.Error(401, "Please sign in to create a template");
+			throw new Meteor.Error(401, "Please sign in to delete a tracked item");
 
 		if(!id)
 			throw new Meteor.Error(422, "Please provide an id");
