@@ -46,6 +46,18 @@
 						</li>
 					</ul>
 				</li>
+				<li class="dropdown {{ activeRouteClass 'viewQrCodes' }}">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						QR Codes &#x25BC;
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li class="{{ activeRouteClass }}">
+							<a href="{{ viewQrCodesPath }}">
+								View All
+							</a>
+						</li>
+					</ul>
+				</li>
 			</ul>
 			{{/if}}
 			<ul class="nav pull-right">

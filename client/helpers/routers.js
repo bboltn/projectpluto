@@ -1,5 +1,6 @@
 Meteor.Router.add({
   "/": "home",
+  "/qrcodes/view": "viewQrCodes",
   "/template/create": "createTemplate",
   "/inventorygroup/create": "createInventoryGroup",
   "/template/view/": "viewItemTemplateAll",
